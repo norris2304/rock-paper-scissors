@@ -41,14 +41,16 @@ function game() {
         console.log(result);
         if (result.includes("won")) {
             playerScore++;
-            console.log(`Computer: ${computerScore} | Player: ${playerScore} | Draws: ${drawScore}`)
+            console.log(`Player: ${playerScore} | Computer: ${computerScore} | Draws: ${drawScore}`)
         } else if (result.includes("lost")) {
             computerScore++;
-            console.log(`Computer: ${computerScore} | Player: ${playerScore} | Draws: ${drawScore}`);
-        } else
+            console.log(`Player: ${playerScore} | Computer: ${computerScore} | Draws: ${drawScore}`);
+        } else if (result.includes("draw")) {
             drawScore++;
+            console.log(`Player: ${playerScore} | Computer: ${computerScore} | Draws: ${drawScore}`);
+        }
     }
-    console.log(`Final results - Player: ${playerScore} Computer: ${computerScore} Draws:${drawScore}`)
+    console.log(`Final results - Player: ${playerScore} Computer: ${computerScore} Draws: ${drawScore}`)
     if (playerScore > computerScore) {
         console.log("You win!");
     } else if (playerScore < computerScore) {
