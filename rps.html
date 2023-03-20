@@ -4,30 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
     <title>Document</title>
 </head>
 <body>
-    <div class="score-container">
-        <div class="score-box">
-            <div class="sign" id="playerSign">Jesse</div>
-            <p class="score" id="playerScore">5</p>
+    <main class="main">
+        <h2 class="score-info" id="scoreInfo"></h2>
+        <h3 class="score-message" id="scoreMessage"></h3>
+        <div class="score-container">
+            <div class="score-box">
+                <div class="sign" id="playerSign"></div>
+                <p class="score" id="playerScore"></p>
+            </div>
+            <div class="score-box">
+                <div class="sign" id="computerSign"></div>
+                <p class="score" id="computerScore"></p>
+            </div>
         </div>
-        <div class="score-box">
-            <div class="sign" id="computerSign">Computer</div>
-            <p class="score" id="computerScore">5</p>
+        <div class="buttons">
+            <button class="btn btn-square" id="rockBtn">
+                <div class="sign">🪨</div>
+            </button>
+            <button class="btn btn-square" id="paperBtn">
+                <div class="sign">📄<img src=""></div>
+            </button>
+            <button class="btn btn-square" id="scissorsBtn">
+                <div class="sign">✂️<img src=""></div>
+            </button>
         </div>
-    </div>
-    <div class="buttons">
-        <button class="btn btn-square" id="rockBtn">
-            <div class="sign">🪨</div>
-        </button>
-        <button class="btn btn-square" id="paperBtn">
-            <div class="sign">📄<img src=""></div>
-        </button>
-        <button class="btn btn-square" id="scissorBtn">
-            <div class="sign">✂️<img src=""></div>
-        </button>
-    </div>
+    </main>
     <script src="rps.js"></script>
 </body>
 </html>

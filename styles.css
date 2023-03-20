@@ -1,0 +1,40 @@
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.btn-square  {
+    width: 150px;
+    height: 150px;
+}
+
+.sign {
+    font-size: 80px;
+}
+
+.score-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+.score-box {
+    width: 160px;
+}
+
+.score {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.main {
+    text-align: center;
+}
+
+body {
+    background-color: #708090;
+}
