@@ -29,6 +29,7 @@ function playRound(playerSelection, computerSelection) {
         computerScore++
         roundWinner = 'computer'
     }
+    updateScoreMessage(roundWinner, playerSelection, computerSelection);
 }
 
 const scoreInfo = document.getElementById('scoreInfo')
@@ -49,6 +50,7 @@ function handleClick(playerSelection) {
     const computerSelection = getComputerChoice();
     playRound(playerSelection, computerSelection);
     updateChoices(playerSelection, computerSelection);
+    updateScore();
 }
 
 function updateChoices(playerSelection, computerSelection) {
@@ -89,3 +91,19 @@ function updateScore() {
     playerScorePara.textContent = `Player: ${playerScore}`
     computerScorePara.textContent = `Computer: ${computerScore}`
 }
+
+function updateScoreMessage(winner, playerSelection, computerSelection) {
+    if (winner === 'player') {
+        scoreMessage.textContent = `${capitalizeFirstLetter(playerSelection)} beats ${computerSelection.toLowerCase()}.`
+        return;
+    } else if (winner === 'computer') {
+        scoreMessage.textContent = `${capitalizeFirstLetter(playerSelection)} is beaten by ${computerSelection.toLowerCase()}.`
+        return;
+    } else {
+        scoreMessage.textContent = `${capitalizeFirstLetter(playerSelection)} ties with ${computerSelection.toLowerCase()}.`
+    }
+}
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase()
+  }
