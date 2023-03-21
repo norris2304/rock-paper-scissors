@@ -12,6 +12,7 @@
 
 .sign {
     font-size: 80px;
+    margin-bottom: 10px;
 }
 
 .score-container {
@@ -20,21 +21,41 @@
     justify-content: space-between;
     margin: 0 auto;
     max-width: 400px;
+    padding: 10px;
+    margin: 0 auto;
 }
 
 .score-box {
-    width: 160px;
+    width: 170px;
 }
 
 .score {
     font-size: 20px;
     font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 .main {
     text-align: center;
 }
 
+.title {
+    font-variant: small-caps;
+    font-size: 40px;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    font-family: 'Molisa Delawere', sans-serif;
+}
+
 body {
     background-color: #708090;
+    line-height: 1.6;
+}
+
+html {
+    min-height: 100%;
 }
