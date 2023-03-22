@@ -4,10 +4,14 @@
 
 .buttons {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     gap: 25px;
-    padding: 25px;
+    padding: 0 25px 25px 25px;
+}
+
+button {
+    border: none;
 }
 
 .btn-square  {
@@ -37,14 +41,19 @@
 }
 
 .score {
-    font-size: 20px;
+    font-size: 32px;
     font-weight: bold;
     margin-top: 10px;
     margin-bottom: 20px;
 }
 
+.score-info {
+    font-size: 32px;
+}
+
 .main {
     text-align: center;
+    margin-top: 25px;
 }
 
 .title {
@@ -52,6 +61,7 @@
     font-size: 50px;
     letter-spacing: 5px;
     text-align: center;
+    color: goldenrod;
 }
 
 .header {
@@ -59,11 +69,14 @@
     justify-content: center;
     font-family: 'LG A100', sans-serif;
     padding: 20px 0;
+    background-color: #393e46;
 }
 
 body {
-    background-color: #708090;
+    background-color: #505b67;
     line-height: 1.6;
+    font-family: 'TT Marxiana Trial', sans-serif;
+    font-size: 20px;
 }
 
 html {
