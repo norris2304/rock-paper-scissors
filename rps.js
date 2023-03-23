@@ -46,6 +46,15 @@ rockBtn.addEventListener('click', () => handleClick('rock'))
 scissorsBtn.addEventListener('click', () => handleClick('scissors'))
 paperBtn.addEventListener('click', () => handleClick('paper'))
 
+rockBtn.addEventListener("mouseenter", () => {rockBtn.style.backgroundColor = "goldenrod"});
+rockBtn.addEventListener("mouseleave", () => {rockBtn.style.backgroundColor = ""});
+
+scissorsBtn.addEventListener("mouseenter", () => {scissorsBtn.style.backgroundColor = "goldenrod"});
+scissorsBtn.addEventListener("mouseleave", () => {scissorsBtn.style.backgroundColor = ""});
+
+paperBtn.addEventListener("mouseenter", () => {paperBtn.style.backgroundColor = "goldenrod"});
+paperBtn.addEventListener("mouseleave", () => {paperBtn.style.backgroundColor = ""});
+
 function handleClick(playerSelection) {
     const computerSelection = getComputerChoice();
     playRound(playerSelection, computerSelection);
