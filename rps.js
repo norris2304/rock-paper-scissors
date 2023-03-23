@@ -32,28 +32,34 @@ function playRound(playerSelection, computerSelection) {
     updateScoreMessage(roundWinner, playerSelection, computerSelection);
 }
 
-const scoreInfo = document.getElementById('scoreInfo')
-const scoreMessage = document.getElementById('scoreMessage')
-const playerScorePara = document.getElementById('playerScore')
-const computerScorePara = document.getElementById('computerScore')
-const playerSign = document.getElementById('playerSign')
-const computerSign = document.getElementById('computerSign')
-const rockBtn = document.getElementById('rockBtn')
-const scissorsBtn = document.getElementById('scissorsBtn')
-const paperBtn = document.getElementById('paperBtn')
+const scoreInfo = document.getElementById('scoreInfo');
+const scoreMessage = document.getElementById('scoreMessage');
+const playerScorePara = document.getElementById('playerScore');
+const computerScorePara = document.getElementById('computerScore');
+const playerSign = document.getElementById('playerSign');
+const computerSign = document.getElementById('computerSign');
+const rockBtn = document.getElementById('rockBtn');
+const scissorsBtn = document.getElementById('scissorsBtn');
+const paperBtn = document.getElementById('paperBtn');
+const btn = document.querySelectorAll('button');
 
 rockBtn.addEventListener('click', () => handleClick('rock'))
 scissorsBtn.addEventListener('click', () => handleClick('scissors'))
 paperBtn.addEventListener('click', () => handleClick('paper'))
 
-rockBtn.addEventListener("mouseenter", () => {rockBtn.style.backgroundColor = "goldenrod"});
-rockBtn.addEventListener("mouseleave", () => {rockBtn.style.backgroundColor = ""});
+btn.forEach((button) => {
+    button.addEventListener('mouseenter', () => {button.style.backgroundColor = "goldenrod";});
+    button.addEventListener('mouseleave', () => {button.style.backgroundColor = ""});
+});
 
-scissorsBtn.addEventListener("mouseenter", () => {scissorsBtn.style.backgroundColor = "goldenrod"});
-scissorsBtn.addEventListener("mouseleave", () => {scissorsBtn.style.backgroundColor = ""});
+// rockBtn.addEventListener("mouseenter", () => {rockBtn.style.backgroundColor = "goldenrod"});
+// rockBtn.addEventListener("mouseleave", () => {rockBtn.style.backgroundColor = ""});
 
-paperBtn.addEventListener("mouseenter", () => {paperBtn.style.backgroundColor = "goldenrod"});
-paperBtn.addEventListener("mouseleave", () => {paperBtn.style.backgroundColor = ""});
+// scissorsBtn.addEventListener("mouseenter", () => {scissorsBtn.style.backgroundColor = "goldenrod"});
+// scissorsBtn.addEventListener("mouseleave", () => {scissorsBtn.style.backgroundColor = ""});
+
+// paperBtn.addEventListener("mouseenter", () => {paperBtn.style.backgroundColor = "goldenrod"});
+// paperBtn.addEventListener("mouseleave", () => {paperBtn.style.backgroundColor = ""});
 
 function handleClick(playerSelection) {
     const computerSelection = getComputerChoice();
