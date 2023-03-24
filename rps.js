@@ -43,18 +43,6 @@ const scissorsBtn = document.getElementById('scissorsBtn');
 const paperBtn = document.getElementById('paperBtn');
 const btn = document.querySelectorAll('button');
 
-rockBtn.addEventListener('click', () => handleClick('rock'))
-scissorsBtn.addEventListener('click', () => handleClick('scissors'))
-paperBtn.addEventListener('click', () => handleClick('paper'))
-
-btn.forEach((button) => {
-    button.addEventListener('mouseenter', () => {button.style.backgroundColor = "goldenrod";});
-    button.addEventListener('mouseleave', () => {button.style.backgroundColor = ""});
-    
-    button.addEventListener('mousedown', () => {button.style.transform = "scale(1.1)"});
-    button.addEventListener('mouseup', () => {button.style.transform = "none"});
-});
-
 // rockBtn.addEventListener("mouseenter", () => {rockBtn.style.backgroundColor = "goldenrod"});
 // rockBtn.addEventListener("mouseleave", () => {rockBtn.style.backgroundColor = ""});
 
@@ -64,9 +52,17 @@ btn.forEach((button) => {
 // paperBtn.addEventListener("mouseenter", () => {paperBtn.style.backgroundColor = "goldenrod"});
 // paperBtn.addEventListener("mouseleave", () => {paperBtn.style.backgroundColor = ""});
 
-function onClick() {
+btn.forEach((button) => {
+    button.addEventListener('mouseenter', () => {button.style.backgroundColor = "goldenrod";});
+    button.addEventListener('mouseleave', () => {button.style.backgroundColor = ""});
+    
+    button.addEventListener('mousedown', () => {button.style.transform = "scale(1.1)"});
+    button.addEventListener('mouseup', () => {button.style.transform = "none"});
+});
 
-}
+rockBtn.addEventListener('click', () => handleClick('rock'))
+scissorsBtn.addEventListener('click', () => handleClick('scissors'))
+paperBtn.addEventListener('click', () => handleClick('paper'))
 
 function handleClick(playerSelection) {
     const computerSelection = getComputerChoice();
