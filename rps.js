@@ -50,6 +50,9 @@ paperBtn.addEventListener('click', () => handleClick('paper'))
 btn.forEach((button) => {
     button.addEventListener('mouseenter', () => {button.style.backgroundColor = "goldenrod";});
     button.addEventListener('mouseleave', () => {button.style.backgroundColor = ""});
+    
+    button.addEventListener('mousedown', () => {button.style.transform = "scale(1.1)"});
+    button.addEventListener('mouseup', () => {button.style.transform = "none"});
 });
 
 // rockBtn.addEventListener("mouseenter", () => {rockBtn.style.backgroundColor = "goldenrod"});
@@ -60,6 +63,10 @@ btn.forEach((button) => {
 
 // paperBtn.addEventListener("mouseenter", () => {paperBtn.style.backgroundColor = "goldenrod"});
 // paperBtn.addEventListener("mouseleave", () => {paperBtn.style.backgroundColor = ""});
+
+function onClick() {
+
+}
 
 function handleClick(playerSelection) {
     const computerSelection = getComputerChoice();
