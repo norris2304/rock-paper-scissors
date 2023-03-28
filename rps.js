@@ -42,20 +42,14 @@ const rockBtn = document.getElementById('rockBtn');
 const scissorsBtn = document.getElementById('scissorsBtn');
 const paperBtn = document.getElementById('paperBtn');
 const btn = document.querySelectorAll('button');
-
-// rockBtn.addEventListener("mouseenter", () => {rockBtn.style.backgroundColor = "goldenrod"});
-// rockBtn.addEventListener("mouseleave", () => {rockBtn.style.backgroundColor = ""});
-
-// scissorsBtn.addEventListener("mouseenter", () => {scissorsBtn.style.backgroundColor = "goldenrod"});
-// scissorsBtn.addEventListener("mouseleave", () => {scissorsBtn.style.backgroundColor = ""});
-
-// paperBtn.addEventListener("mouseenter", () => {paperBtn.style.backgroundColor = "goldenrod"});
-// paperBtn.addEventListener("mouseleave", () => {paperBtn.style.backgroundColor = ""});
+const restartBtn = document.getElementById('restartBtn')
+const endgameModal = document.getElementById('endgameModal')
+const endgameMsg = document.getElementById('endgameMsg')
+const overlay = document.getElementById('overlay')
 
 btn.forEach((button) => {
     button.addEventListener('mouseenter', () => {button.style.backgroundColor = "goldenrod";});
     button.addEventListener('mouseleave', () => {button.style.backgroundColor = ""});
-    
     button.addEventListener('mousedown', () => {button.style.transform = "scale(1.1)"});
     button.addEventListener('mouseup', () => {button.style.transform = "none"});
 });
@@ -63,12 +57,27 @@ btn.forEach((button) => {
 rockBtn.addEventListener('click', () => handleClick('rock'))
 scissorsBtn.addEventListener('click', () => handleClick('scissors'))
 paperBtn.addEventListener('click', () => handleClick('paper'))
+restartBtn.addEventListener('click', restartGame)
+
+function isGameOver() {
+    return playerScore === 5 || computerScore === 5
+}
 
 function handleClick(playerSelection) {
+    if (isGameOver()) {
+        openGameModal();
+        return
+    }
+
     const computerSelection = getComputerChoice();
     playRound(playerSelection, computerSelection);
     updateChoices(playerSelection, computerSelection);
     updateScore();
+
+    if (isGameOver()) {
+        openEndgameModal();
+        setFinalMessage();
+    }
 }
 
 function updateChoices(playerSelection, computerSelection) {
@@ -124,4 +133,33 @@ function updateScoreMessage(winner, playerSelection, computerSelection) {
 
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase()
-  }
+}
+
+function openEndgameModal() {
+    endgameModal.classList.add('active')
+    overlay.classList.add('active')
+}
+
+function closeEndgameModal() {
+    endgameModal.classList.remove('active')
+    overlay.classList.remove('active')
+}
+
+function setFinalMessage() {
+    return playerScore > computerScore
+        ? (endgameMsg.textContent = 'You won!')
+        : (endgameMsg.textContent = 'You lost :(')
+}
+
+function restartGame() {
+    playerScore = 0
+    computerScore = 0
+    scoreInfo.textContent = 'Time to choose your weapon!'
+    scoreMessage.textContent = 'First to 5 points wins the game!'
+    playerScorePara.textContent = 'Player: 0'
+    computerScorePara.textContent = 'Computer: 0'
+    playerSign.textContent = '?'
+    computerSign.textContent = '?'
+    endgameModal.classList.remove('active')
+    overlay.classList.remove('active')
+}
