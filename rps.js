@@ -148,7 +148,7 @@ function closeEndgameModal() {
 function setFinalMessage() {
     return playerScore > computerScore
         ? (endgameMsg.textContent = 'You won!')
-        : (endgameMsg.textContent = 'You lost :(')
+        : (endgameMsg.textContent = 'You lost 😔')
 }
 
 function restartGame() {
